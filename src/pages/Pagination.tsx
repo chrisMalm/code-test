@@ -20,7 +20,7 @@ const Pagination = () => {
 
   useEffect(() => {
     dispatch(fetchItems(1));
-  }, []);
+  }, [dispatch]);
 
   const handlePageChange = (_: React.ChangeEvent<unknown>, newPage: number) => {
     console.log("page change");

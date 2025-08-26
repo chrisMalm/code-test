@@ -55,7 +55,8 @@ const FilterData = () => {
     return transactions.filter((tx) => {
       // om type inte e all så kolla om den loopade tx.type inte är transactiontype och
       // ta bort den ur listan
-      if (transactionType != "all" && tx.type != transactionType) return false;
+      if (transactionType !== "all" && tx.type !== transactionType)
+        return false;
       if (date && date[0] && date[1]) {
         // filtrera på datum, konvertera till javascript date object och ta bort dom datum i listan
         const txDate = new Date(tx.date);

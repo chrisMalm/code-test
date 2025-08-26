@@ -21,7 +21,7 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   // useAppSelector används för att häng a data från redux state
-  const { error, loading, user } = useAppSelector((state) => state.signup);
+  const { error, user } = useAppSelector((state) => state.signup);
   const [open, setOpen] = useState(false);
 
   const UserSchema = z

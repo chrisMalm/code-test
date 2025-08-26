@@ -37,8 +37,7 @@ function App() {
           <Route path="multi-filter" element={<MultiFilterData />} />
         </Route>
         <Route path="transactions" element={<Transactions />} />
-        {/* <Route path="filterdata" element={<FilterData />} />
-        <Route path="multifilterdata" element={<MultiFilterData />} /> */}
+
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="pagination" element={<Pagination />} />

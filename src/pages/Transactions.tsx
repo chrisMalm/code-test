@@ -6,9 +6,7 @@ import { Box } from "@mui/material";
 
 const Transactions = () => {
   const dispatch = useAppDispatch();
-  const { transactions, loading, error } = useAppSelector(
-    (state) => state.transactions
-  );
+  const { transactions } = useAppSelector((state) => state.transactions);
 
   useEffect(() => {
     dispatch(fetchTransactions());

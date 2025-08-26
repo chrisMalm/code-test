@@ -24,7 +24,6 @@ const UserForm = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<UserFormData>({
     resolver: zodResolver(UserSchema),

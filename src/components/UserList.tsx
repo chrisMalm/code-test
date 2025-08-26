@@ -13,7 +13,7 @@ const UserList = () => {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
   return (
-    <div className="wrapper-userlist">
+    <div className="wrapper-userlist ">
       <h2 className="get-title">
         GET user from db postgres with redux createAsyncThunk
       </h2>

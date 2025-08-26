@@ -5,7 +5,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from "./pages/Home";
-import About from "./pages/About";
 import BaseLayout from "./layouts/baseLayout";
 import NotFound from "./pages/NotFound";
 import { store } from "./store/index";
@@ -29,7 +28,6 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<BaseLayout />}>
         <Route index element={<Home />} />
-        <Route path="/about" element={<About />} />
         <Route path="/forms" element={<FormWrapperLayout />}>
           <Route path="register-form" element={<UserForm />} />
           <Route path="controller-form" element={<ControllerForm />} />

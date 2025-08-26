@@ -1,0 +1,68 @@
+{
+  "items": [
+    { "name": "Ray Ban", "category": "Sunglasses", "type": "accessories" },
+    { "name": "Aldo", "category": "Sunglasses", "type": "accessories" },
+    { "name": "Polaroid", "category": "Sunglasses", "type": "accessories" },
+
+    { "name": "Rolex", "category": "Watches", "type": "accessories" },
+    { "name": "Timex", "category": "Watches", "type": "accessories" },
+
+    { "name": "Prada", "category": "Bags", "type": "accessories" },
+    { "name": "Gucci", "category": "Bags", "type": "accessories" },
+    { "name": "Guess", "category": "Bags", "type": "accessories" },
+
+    { "name": "Levi's 501", "category": "Jeans", "type": "bottom" },
+    { "name": "Wrangler Regular", "category": "Jeans", "type": "bottom" },
+    { "name": "Diesel Straight", "category": "Jeans", "type": "bottom" },
+
+    { "name": "Nike Classic Tee", "category": "T-Shirts", "type": "tops" },
+    { "name": "Adidas Originals Tee", "category": "T-Shirts", "type": "tops" },
+    { "name": "H&M Basic Tee", "category": "T-Shirts", "type": "tops" },
+
+    { "name": "Nike Hoodie", "category": "Hoodies", "type": "tops" },
+    { "name": "Adidas Hoodie", "category": "Hoodies", "type": "tops" },
+    { "name": "Champion Hoodie", "category": "Hoodies", "type": "tops" },
+
+    { "name": "Nike Air Max", "category": "Shoes", "type": "sports" },
+    { "name": "Adidas Ultraboost", "category": "Shoes", "type": "sports" },
+    { "name": "Puma Running Shoes", "category": "Shoes", "type": "sports" },
+    { "name": "Oakley", "category": "Sunglasses", "type": "accessories" },
+    { "name": "Maui Jim", "category": "Sunglasses", "type": "accessories" },
+    { "name": "Carrera", "category": "Sunglasses", "type": "accessories" },
+
+    { "name": "Casio G-Shock", "category": "Watches", "type": "accessories" },
+    { "name": "Fossil", "category": "Watches", "type": "accessories" },
+    { "name": "Citizen", "category": "Watches", "type": "accessories" },
+
+    { "name": "Michael Kors", "category": "Bags", "type": "accessories" },
+    { "name": "Kate Spade", "category": "Bags", "type": "accessories" },
+    { "name": "Coach", "category": "Bags", "type": "accessories" },
+
+    { "name": "Lee Skinny", "category": "Jeans", "type": "bottom" },
+    { "name": "G-Star Raw", "category": "Jeans", "type": "bottom" },
+    { "name": "True Religion", "category": "Jeans", "type": "bottom" },
+
+    { "name": "Uniqlo Supima", "category": "T-Shirts", "type": "tops" },
+    { "name": "Gap Basic Tee", "category": "T-Shirts", "type": "tops" },
+    { "name": "Zara Printed Tee", "category": "T-Shirts", "type": "tops" },
+
+    { "name": "Patagonia Hoodie", "category": "Hoodies", "type": "tops" },
+    { "name": "The North Face Hoodie", "category": "Hoodies", "type": "tops" },
+    { "name": "Reebok Hoodie", "category": "Hoodies", "type": "tops" },
+
+    { "name": "New Balance 574", "category": "Shoes", "type": "sports" },
+    { "name": "Asics Gel-Kayano", "category": "Shoes", "type": "sports" },
+    { "name": "Brooks Ghost", "category": "Shoes", "type": "sports" },
+
+    { "name": "Vans Old Skool", "category": "Shoes", "type": "sports" },
+    { "name": "Converse Chuck Taylor", "category": "Shoes", "type": "sports" },
+    { "name": "Skechers Go Walk", "category": "Shoes", "type": "sports" },
+
+    { "name": "Fila Disruptor", "category": "Shoes", "type": "sports" },
+    { "name": "Timberland Boots", "category": "Shoes", "type": "sports" },
+    { "name": "Columbia Hiking Boots", "category": "Shoes", "type": "sports" },
+
+    { "name": "H&M Jeans", "category": "Jeans", "type": "bottom" },
+    { "name": "Levi's 512", "category": "Jeans", "type": "bottom" }
+  ]
+}

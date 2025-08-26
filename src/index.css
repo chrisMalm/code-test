@@ -1,13 +1,139 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+:root {
+  --primary: #bc4123;
+  --secondary: #2b3452;
+}
+
+body {
+  padding: 2rem 2rem 0 2rem;
+  background: var(--secondary);
+}
+* {
+  color: #ffff;
+  margin: 0;
+}
+.root-layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  border: 0;
+  padding: 6px;
+  border-radius: 4px;
+  color: white;
+  background: var(--primary);
+}
+
+nav {
+  padding-bottom: 2rem;
+}
+
+header nav {
+  display: flex;
+  justify-content: end;
+  margin: 0 auto;
+  gap: 16px;
+}
+
+header nav h1 {
+  margin-right: auto;
+  font-size: 16px;
+  padding: 6px;
+  border-bottom: 3px solid var(--primary);
+}
+
+header nav a {
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 4px;
+}
+header nav a.active {
+  background: var(--primary);
+}
+
+.filter-layout nav {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.filter-layout nav a {
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 4px;
+}
+.filter-layout nav a.active {
+  background: var(--primary);
+}
+
+main {
+  padding: 2rem 0 2rem 0;
+}
+
+footer {
+  padding: 2rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+input {
+  color: #2b3452;
+  margin-bottom: 1rem;
+  background-color: white;
+}
+
+.wrapper-userlist {
+  padding-bottom: 2rem;
+}
+.wrapper-userlist .get-title {
+  padding-bottom: 1rem;
+}
+
+.wrapper-input {
+  padding-top: 2rem;
+}
+.container-input {
+  padding-bottom: 2rem;
+  border-top: 2px solid white;
+
+  padding-top: 1rem;
+}
+
+form {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.container-form {
+  border-top: 2px solid white;
+  padding-top: 2rem;
+}
+
+.form-layout {
+  display: flex;
+}
+
+.tets p {
+  color: black;
+}
+
+.filter-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

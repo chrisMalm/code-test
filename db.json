@@ -1,0 +1,214 @@
+{
+  "transactions": [
+    {
+      "id": "1",
+      "amount": 500,
+      "type": "deposit",
+      "date": "2024-11-01",
+      "description": "Salary"
+    },
+    {
+      "id": "2",
+      "amount": 80,
+      "type": "withdrawl",
+      "date": "2024-11-02",
+      "description": "Groceries"
+    },
+    {
+      "id": "3",
+      "amount": 150,
+      "type": "deposit",
+      "date": "2024-11-03",
+      "description": "Freelance payment"
+    },
+    {
+      "id": "4",
+      "amount": 120,
+      "type": "withdrawl",
+      "date": "2024-11-04",
+      "description": "Electricity bill"
+    },
+    {
+      "id": "5",
+      "amount": 90,
+      "type": "withdrawl",
+      "date": "2024-11-05",
+      "description": "Gym membership"
+    },
+    {
+      "id": "6",
+      "amount": 200,
+      "type": "deposit",
+      "date": "2024-11-06",
+      "description": "Sold bike"
+    },
+    {
+      "id": "7",
+      "amount": 70,
+      "type": "withdrawl",
+      "date": "2024-11-07",
+      "description": "Streaming service"
+    },
+    {
+      "id": "8",
+      "amount": 450,
+      "type": "deposit",
+      "date": "2024-11-08",
+      "description": "Bonus"
+    },
+    {
+      "id": "9",
+      "amount": 60,
+      "type": "withdrawl",
+      "date": "2024-11-09",
+      "description": "Dining out"
+    },
+    {
+      "id": "10",
+      "amount": 300,
+      "type": "deposit",
+      "date": "2024-11-10",
+      "description": "Gift"
+    },
+    {
+      "id": "11",
+      "amount": 100,
+      "type": "withdrawl",
+      "date": "2024-11-11",
+      "description": "Taxi"
+    },
+    {
+      "id": "12",
+      "amount": 250,
+      "type": "deposit",
+      "date": "2024-11-12",
+      "description": "Sold laptop"
+    },
+    {
+      "id": "13",
+      "amount": 85,
+      "type": "withdrawl",
+      "date": "2024-11-13",
+      "description": "Lunch"
+    },
+    {
+      "id": "14",
+      "amount": 400,
+      "type": "deposit",
+      "date": "2024-11-14",
+      "description": "Freelance gig"
+    },
+    {
+      "id": "15",
+      "amount": 50,
+      "type": "withdrawl",
+      "date": "2024-11-15",
+      "description": "Snacks"
+    },
+    {
+      "id": "16",
+      "amount": 100,
+      "type": "deposit",
+      "date": "2024-11-16",
+      "description": "Bank interest"
+    },
+    {
+      "id": "17",
+      "amount": 75,
+      "type": "withdrawl",
+      "date": "2024-11-17",
+      "description": "Internet bill"
+    },
+    {
+      "id": "18",
+      "amount": 110,
+      "type": "deposit",
+      "date": "2024-11-18",
+      "description": "Partial refund"
+    },
+    {
+      "id": "19",
+      "amount": 95,
+      "type": "withdrawl",
+      "date": "2024-11-19",
+      "description": "Phone bill"
+    },
+    {
+      "id": "20",
+      "amount": 600,
+      "type": "deposit",
+      "date": "2024-11-20",
+      "description": "Salary"
+    },
+    {
+      "id": "21",
+      "amount": 120,
+      "type": "withdrawl",
+      "date": "2024-11-21",
+      "description": "Doctor appointment"
+    },
+    {
+      "id": "22",
+      "amount": 130,
+      "type": "deposit",
+      "date": "2024-11-22",
+      "description": "Sold monitor"
+    },
+    {
+      "id": "23",
+      "amount": 40,
+      "type": "withdrawl",
+      "date": "2024-11-23",
+      "description": "Coffee"
+    },
+    {
+      "id": "24",
+      "amount": 90,
+      "type": "withdrawl",
+      "date": "2024-11-24",
+      "description": "Bus pass"
+    },
+    {
+      "id": "25",
+      "amount": 220,
+      "type": "deposit",
+      "date": "2024-11-25",
+      "description": "Gift from friend"
+    },
+    {
+      "id": "26",
+      "amount": 30,
+      "type": "withdrawl",
+      "date": "2024-11-26",
+      "description": "Snacks"
+    },
+    {
+      "id": "27",
+      "amount": 190,
+      "type": "deposit",
+      "date": "2024-11-27",
+      "description": "Side project"
+    },
+    {
+      "id": "28",
+      "amount": 55,
+      "type": "withdrawl",
+      "date": "2024-11-28",
+      "description": "Laundry"
+    },
+    {
+      "id": "29",
+      "amount": 500,
+      "type": "deposit",
+      "date": "2024-11-29",
+      "description": "Salary"
+    },
+    {
+      "id": "30",
+      "amount": 75,
+      "type": "withdrawl",
+      "date": "2024-11-30",
+      "description": "Pet food"
+    }
+  ]
+}

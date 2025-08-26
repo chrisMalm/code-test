@@ -70,8 +70,8 @@ const ControllerForm = () => {
         onClose={handleClose}
         message={ErrorMsg || "User created successfully!"}
       />
-      <div className="container-form">
-        <h2>
+      <div className="container-form  border-t-2 border-white ">
+        <h2 className="text-lg font-bold mt-4">
           Post user to DB using Redux, createAsyncThunk, React Hook Form, and
           Zod validation
         </h2>

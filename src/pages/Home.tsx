@@ -1,12 +1,13 @@
+import { Box } from "@mui/material";
 import Counter from "../components/Counter";
 import UserList from "../components/UserList";
 
 const Home = () => {
   return (
-    <div>
+    <Box>
       <UserList />
       <Counter />
-    </div>
+    </Box>
   );
 };
 

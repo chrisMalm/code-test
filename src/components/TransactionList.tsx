@@ -24,7 +24,6 @@ const TransactionList = ({ transactions }: Props) => {
     // deletar transaction via idet och redux state uppdateras
     // kör om transaction komponenten och props
     // uppdateras med borttagna transaction
-    console.log(id, "idet");
 
     dispatch(deleteTransaction(id))
       // unwrap är return värdet från en metod i redux

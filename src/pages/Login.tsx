@@ -51,18 +51,15 @@ const Login = () => {
   // Om valideringen misslyckas så körs inte din onSubmit-funktion alls
   // och lägger in felen i formState.errors istället.
   const onSubmit: SubmitHandler<LoginInputs> = (data) => {
-    console.log(data);
     dispatch(login(data))
       .unwrap()
       .then((res) => {
-        console.log(res, "res");
         reset();
         navigate("/");
       })
       .catch((err) => {
         setErrorMsg(err);
         setOpen(true);
-        console.log(err, "wwwwwwwwwww");
       });
   };
 

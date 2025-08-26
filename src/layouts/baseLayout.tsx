@@ -74,7 +74,7 @@ const BaseLayout = () => {
   );
 
   return (
-    <div className="root-layout">
+    <div className="flex min-h-screen flex-col">
       <header className="">
         <nav className="flex items-center justify-between">
           <h1 className="text-xl font-bold">codeTest</h1>
@@ -107,7 +107,7 @@ const BaseLayout = () => {
         </nav>
       </header>
 
-      <main>
+      <main className="py-8">
         <Snackbar
           open={snackbarOpen}
           autoHideDuration={6000}
@@ -117,7 +117,7 @@ const BaseLayout = () => {
         <Outlet />
       </main>
 
-      <footer className="text-center p-4">Copyright 2025</footer>
+      <footer className="text-center p-8 mt-auto">Copyright 2025</footer>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { fetchUsers } from "../store/users/usersSlice";
+import { Box } from "@mui/material";
 
 const UserList = () => {
   const dispatch = useAppDispatch();
@@ -10,17 +11,20 @@ const UserList = () => {
     dispatch(fetchUsers());
   }, [dispatch]);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (loading) return <Box>Loading...</Box>;
+  if (error) return <Box>Error: {error}</Box>;
   return (
-    <div className="wrapper-userlist ">
-      <h2 className="get-title">
-        GET user from db postgres with redux createAsyncThunk
+    <Box className="pb-8">
+      <h2 className="pb-4">
+        GET user from db postgres with redux createAsyncThunk :
       </h2>
-      {list.map((user) => (
-        <div key={user.id}>{user.name}</div>
+      {list.map((user, index) => (
+        <Box key={user.id}>
+          <span className="pr-2">{index + 1}.</span>
+          {user.name}
+        </Box>
       ))}
-    </div>
+    </Box>
   );
 };
 

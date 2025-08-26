@@ -22,6 +22,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import ProtectedPage from "./pages/ProtectedPage";
 import FilterWrapperLayout from "./layouts/filterWrapperLayout";
+import Profile from "./pages/Profile";
 
 function App() {
   const router = createBrowserRouter(
@@ -42,6 +43,7 @@ function App() {
         <Route path="signup" element={<SignUp />} />
         <Route path="pagination" element={<Pagination />} />
         <Route path="/protected" element={<ProtectedPage />} />
+        <Route path="/profile" element={<Profile />} />
 
         <Route path="*" element={<NotFound />} />
       </Route>

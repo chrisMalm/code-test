@@ -3,6 +3,7 @@ import { useAppDispatch } from "../store/hooks";
 import { postUser } from "../store/users/usersSlice";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { Box } from "@mui/material";
 
 //Post user to db pg with createasyncThunk with REGISTER form
 
@@ -41,29 +42,58 @@ const UserForm = () => {
     }
   };
   return (
-    <div className="container-form">
-      <h2>
-        POST user to db with redux createAsyncThunk and react hook form and zod
-        for validation with ...register
-      </h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label htmlFor="name">Name</label>
-        {/* register() har direkt tillgång till DOM-elementet det blir som en use ref   */}
-        <input placeholder="name" {...register("name")} />
-        {errors.name && <p style={{ color: "red" }}>{errors.name.message}</p>}
+    <div className="min-h-screen flex  justify-center border-t-2 border-white">
+      <div className="w-full">
+        <h2 className="text-lg font-bold my-4 text-center">
+          POST user to db with redux createAsyncThunk and react hook form and
+          zod
+        </h2>
 
-        <label htmlFor="email">email</label>
-        <input placeholder="email" {...register("email")} />
-        {errors.email && <p style={{ color: "red" }}>{errors.email.message}</p>}
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col  gap-4 pt-8 w-full max-w-md mx-auto"
+        >
+          <label htmlFor="name" className="font-semibold">
+            Name
+          </label>
+          <input
+            placeholder="name"
+            {...register("name")}
+            className="border border-gray-300 rounded p-2"
+          />
+          {errors.name && <p className="text-red-600">{errors.name.message}</p>}
 
-        <label htmlFor="address">Adress</label>
-        <input placeholder="address" {...register("address")} />
-        {errors.address && (
-          <p style={{ color: "red" }}>{errors.address.message}</p>
-        )}
+          <label htmlFor="email" className="font-semibold">
+            Email
+          </label>
+          <input
+            placeholder="email"
+            {...register("email")}
+            className="border border-gray-300 rounded p-2"
+          />
+          {errors.email && (
+            <p className="text-red-600">{errors.email.message}</p>
+          )}
 
-        <input type="submit" value="Submit med register " />
-      </form>
+          <label htmlFor="address" className="font-semibold">
+            Address
+          </label>
+          <input
+            placeholder="address"
+            {...register("address")}
+            className="border border-gray-300 rounded p-2"
+          />
+          {errors.address && (
+            <p className="text-red-600">{errors.address.message}</p>
+          )}
+
+          <input
+            type="submit"
+            value="Submit med register"
+            className="p-2 rounded cursor-pointer  bg-blue-400"
+          />
+        </form>
+      </div>
     </div>
   );
 };

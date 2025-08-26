@@ -32,7 +32,6 @@ const FilterData = () => {
   const [date, setDate] = useState<Nullable<(Date | null)[]>>(null);
   const [transactionType, setTransactionType] =
     useState<transactionTypes>("all");
-  console.log(date);
 
   useEffect(() => {
     setLoading(true);

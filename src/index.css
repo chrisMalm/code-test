@@ -3,13 +3,17 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply pt-8 pr-8 pl-8 bg-secondary text-textColor;
+  }
+}
+
+@layer components {
   button,
+  Button,
   input[type="submit"],
   Button[type="submit"] {
-    @apply border-0 px-3 py-2 rounded text-white bg-primary;
-  }
-  body {
-    @apply pt-8 pr-8 pl-8 bg-secondary;
+    @apply border-0 px-3 py-2 rounded bg-primary;
   }
 }
 
@@ -31,7 +35,7 @@ code {
 }
 
 * {
-  color: #ffff;
+  /* color: #ffff; */
   margin: 0;
 }
 

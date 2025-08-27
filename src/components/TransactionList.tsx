@@ -70,7 +70,7 @@ const TransactionList = ({ transactions }: Props) => {
           {transactions.map((trans) => (
             <Grid size={{ xs: 8, md: 6, lg: 4 }} key={trans.id}>
               <Card>
-                <CardContent className="tets">
+                <CardContent className="text-black">
                   <p>ID: {trans.id}</p>
                   <p>User ID: {trans.user_id}</p>
                   <p>Typ: {trans.type}</p>

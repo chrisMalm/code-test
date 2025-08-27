@@ -8,7 +8,7 @@ const FilterWrapperLayout = () => {
         Använder en Json-server för att hämta data från en json fil. Npm run
         transaction för att testa.
       </h2>
-      <h2 className="mb-16">
+      <h2 className="mb-8">
         Använder en Json-server för att hämta data från en json fil. Npm run
         multifilter för att testa.
       </h2>

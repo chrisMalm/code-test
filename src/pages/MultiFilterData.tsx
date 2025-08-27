@@ -85,8 +85,8 @@ const MultiFilterData = () => {
   };
   return (
     <>
-      <Box sx={{ padding: "2rem 0rem" }}>
-        <h1>Multifiltrering från JSON-server (npm run filter)</h1>
+      <Box sx={{ marginBottom: "2rem" }}>
+        <h1>Multifiltrering från JSON-server (npm run multifilter )</h1>
         <p>
           Denna komponent hämtar data från en lokal JSON-server och låter dig
           filtrera resultatet baserat på både typ och kategori.
@@ -96,66 +96,72 @@ const MultiFilterData = () => {
           optimera prestanda vid varje valändring.
         </p>
       </Box>
-      <Box>
-        {/* Multi filter boxes   */}
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            gap: "5rem",
-            marginBottom: "2rem",
-          }}
-        >
-          {typeCategories.map((type, index) => (
-            <Button
-              key={index}
-              sx={{
-                color: selectedCatType?.includes(type) ? "red" : "black",
-              }}
-              onClick={() => handleClickType(type)}
-            >
-              {type}
-            </Button>
-          ))}
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            gap: "5rem",
-            marginBottom: "2rem",
-          }}
-        >
-          {categories.map((category, index) => (
-            <Button
-              key={index}
-              sx={{ color: selectedCat === category ? "red" : "black" }}
-              onClick={() => handleClickCat(category)}
-            >
-              {category}
-            </Button>
-          ))}
-        </Box>
-        {/* filter outcome  */}
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-          {filterItemsOnChange?.map((item, index) => (
-            <Grid size={4} key={index}>
-              <Card>
-                <CardContent>
-                  <Typography sx={{ color: "black", padding: "1rem" }}>
-                    {item.name}
-                  </Typography>
-                  <Typography sx={{ color: "black", padding: "1rem" }}>
-                    {item.category}
-                  </Typography>
-                  <Typography sx={{ color: "black", padding: "1rem" }}>
-                    {item.type}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
+
+      {/* Multi filter boxes   */}
+      <Box
+        display="grid"
+        gridTemplateColumns="repeat(auto-fit, minmax(150px, 1fr))"
+        gap={2}
+        width="100%"
+        paddingBottom={2}
+        justifyItems="center"
+      >
+        {typeCategories.map((type, index) => (
+          <Button
+            key={index}
+            fullWidth
+            sx={{
+              color: selectedCatType?.includes(type) ? "red" : "black",
+            }}
+            onClick={() => handleClickType(type)}
+          >
+            {type}
+          </Button>
+        ))}
+      </Box>
+      <Box
+        borderTop={1}
+        paddingTop={2}
+        display="grid"
+        gridTemplateColumns="repeat(auto-fit, minmax(150px, 1fr))"
+        gap={2}
+        width="100%"
+        justifyItems="center"
+      >
+        {categories.map((category, index) => (
+          <Button
+            key={index}
+            fullWidth
+            sx={{ color: selectedCat === category ? "red" : "black" }}
+            onClick={() => handleClickCat(category)}
+          >
+            {category}
+          </Button>
+        ))}
+      </Box>
+      {/* filter outcome  */}
+      <Box
+        marginTop={8}
+        display="grid"
+        gridTemplateColumns="repeat(auto-fill, minmax(250px, 1fr))"
+        gap={2}
+        width="100%"
+      >
+        {filterItemsOnChange?.map((item, index) => (
+          <Card key={index}>
+            <CardContent>
+              <Typography sx={{ color: "black", padding: "1rem" }}>
+                {item.name}
+              </Typography>
+              <Typography sx={{ color: "black", padding: "1rem" }}>
+                {item.category}
+              </Typography>
+              <Typography sx={{ color: "black", padding: "1rem" }}>
+                {item.type}
+              </Typography>
+            </CardContent>
+          </Card>
+        ))}
       </Box>
     </>
   );

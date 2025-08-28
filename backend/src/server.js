@@ -214,7 +214,7 @@ app.post("/api/login", async (req, res) => {
 
   // Skapa JWT-token med användarinfo (t.ex id, email)
   const token = jwt.sign(
-    { id: user.id, email: user.email, name: user.name },
+    { id: user.id, email: user.email, name: user.name, address: user.address },
     JWT_SECRET,
     { expiresIn: "1h" }
   );

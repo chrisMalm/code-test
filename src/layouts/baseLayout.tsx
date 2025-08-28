@@ -48,10 +48,15 @@ const BaseLayout = () => {
   };
 
   const DrawerList = (
-    <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
-      <Box sx={{ color: "black", padding: "1rem" }}>{me?.name}</Box>
+    <Box
+      className="bg-profileCard h-full text-white font-bold"
+      sx={{ width: 250 }}
+      role="presentation"
+      onClick={toggleDrawer(false)}
+    >
+      <Box sx={{ padding: "1rem" }}>{me?.name}</Box>
       <Divider />
-      <Box className="flex flex-col gap-2 p-4" sx={{ color: "black" }}>
+      <Box className="flex flex-col gap-4 p-4">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/forms">Forms</NavLink>
         <NavLink to="/Transactions">Transactions</NavLink>
@@ -60,14 +65,17 @@ const BaseLayout = () => {
         {me && <NavLink to="/Protected">Protected</NavLink>}
         {me && (
           <NavLink to="/Profile" className="flex items-center gap-1">
-            <AccountBoxIcon sx={{ background: "black" }} /> Profile
+            <AccountBoxIcon /> Profile
           </NavLink>
         )}
         {!me && <NavLink to="/Login">Login</NavLink>}
         {me && (
-          <Button color="error" variant="outlined" onClick={handleLogout}>
+          <button
+            className="font-bold text-white rounded-sm shadow hover:bg-red-600 transition"
+            onClick={() => handleLogout()}
+          >
             Logout
-          </Button>
+          </button>
         )}
       </Box>
     </Box>
@@ -97,7 +105,7 @@ const BaseLayout = () => {
 
           {/* Tablet/Small: Hamburger */}
           <div className="lg:hidden">
-            <IconButton onClick={toggleDrawer(true)}>
+            <IconButton sx={{ color: "white" }} onClick={toggleDrawer(true)}>
               <MenuIcon />
             </IconButton>
             <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>

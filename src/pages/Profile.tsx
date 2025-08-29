@@ -3,7 +3,7 @@ import NotFound from "../pages/NotFound";
 import { logoutUser } from "../store/logout/logoutSlice";
 import ProfileField from "../components/ProfileField";
 const Profile = () => {
-  const { me, error, loading } = useAppSelector((state) => state.me);
+  const { me, error } = useAppSelector((state) => state.me);
   console.log(me);
   const firstName = me?.name.split(" ")[0].toString()[0].toUpperCase();
 

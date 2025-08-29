@@ -87,9 +87,6 @@ const Login = () => {
           gap: 2,
         }}
       >
-        <Box sx={{ width: "50%", textAlign: "end" }}>
-          Dont have any account? <Link to="/signup">Signup</Link>
-        </Box>
         <Box
           component="form"
           onSubmit={handleSubmit(onSubmit)}
@@ -129,6 +126,9 @@ const Login = () => {
           <Button type="submit" variant="contained" fullWidth sx={{ mt: 2 }}>
             Sign-in
           </Button>
+        </Box>
+        <Box sx={{ width: "50%", textAlign: "end" }}>
+          Dont have any account? <Link to="/signup">Signup</Link>
         </Box>
       </Box>
     </>

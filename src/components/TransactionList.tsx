@@ -54,18 +54,22 @@ const TransactionList = ({ transactions }: Props) => {
         onClose={handleClose}
         message={errorMsg || "Removed transaction successfully"}
       />
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <h2>
+      <div
+        className="sm:justify-center"
+        style={{ display: "flex", flexDirection: "column" }}
+      >
+        <h2 className="font-extrabold mb-4">
           User:{" "}
           {transactions.length > 0
             ? transactions[0].user_id
             : "Ingen användare"}
         </h2>{" "}
         <Grid
+          className="justify-center md:justify-center"
           container
           rowSpacing={1}
           columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-          sx={{ margin: "0 2rem" }}
+          sx={{ marginBottom: "2rem" }}
         >
           {transactions.map((trans) => (
             <Grid size={{ xs: 8, md: 6, lg: 4 }} key={trans.id}>

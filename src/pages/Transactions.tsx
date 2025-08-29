@@ -22,7 +22,7 @@ const Transactions = () => {
   }, [transactions]);
 
   return (
-    <>
+    <Box className="flex flex-col justify-center items-center">
       <Box sx={{ padding: "2rem 0rem" }}>
         <h1>
           Denna komponent ansvarar för att hämta transaktioner via Redux
@@ -40,12 +40,18 @@ const Transactions = () => {
           state hantering med loading- och errorstatus.
         </p>
       </Box>
-      <Box display="flex" flexDirection={{ xs: "column", md: "row" }}>
-        {/* sätter user 1 o 2 på höger respekive vänster sida  */}
-        <TransactionList transactions={userOneTransactions} />
-        <TransactionList transactions={userTwoTransactions} />
+      <Box
+        display="flex"
+        className="AAA"
+        // flexDirection={{ xs: "column", md: "row" }}
+      >
+        {/* sätter user 1 o 2 under varandra  */}
+        <Box className="BBB">
+          <TransactionList transactions={userOneTransactions} />
+          <TransactionList transactions={userTwoTransactions} />
+        </Box>
       </Box>
-    </>
+    </Box>
   );
 };
 

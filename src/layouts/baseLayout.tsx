@@ -115,7 +115,7 @@ const BaseLayout = () => {
         </nav>
       </header>
 
-      <main className="py-8">
+      <main className="py-8 flex, flex-1 items-center justify-center">
         <Snackbar
           open={snackbarOpen}
           autoHideDuration={6000}

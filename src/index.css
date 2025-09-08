@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply pt-8 pr-8 pl-8 bg-secondary text-textColor;
+    @apply bg-secondary text-textColor font-sans;
   }
 }
 
@@ -15,49 +15,14 @@
   Button[type="submit"] {
     @apply border-0 px-3 py-2 rounded bg-primary;
   }
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-:root {
-  --primary: #bc4123;
-  --secondary: #2b3452;
+  .nav-link {
+    @apply text-textColor hover:bg-onHover tracking-wider p-2 rounded-sm;
+  }
+  .nav-link-active {
+    @apply font-bold tracking-wider p-2 rounded-sm;
+  }
 }
 
 * {
-  /* color: #ffff; */
   margin: 0;
-}
-
-header nav {
-  display: flex;
-  justify-content: end;
-  margin: 0 auto;
-  gap: 16px;
-}
-
-header nav h1 {
-  margin-right: auto;
-  font-size: 16px;
-  padding: 6px;
-  border-bottom: 3px solid var(--primary);
-}
-
-header nav a {
-  text-decoration: none;
-  padding: 6px;
-  border-radius: 4px;
-}
-header nav a.active {
-  background: var(--primary);
 }

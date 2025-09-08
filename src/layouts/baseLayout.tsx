@@ -75,25 +75,87 @@ const BaseLayout = () => {
   );
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <header className="">
-        <nav className="flex items-center justify-between">
-          <h1 className="text-xl font-bold">codeTest</h1>
+    <>
+      <header className="bg-headerNav p-5">
+        <nav className="flex ">
+          <h1 className="p-2 text-xl font-bold mr-auto border-b-2 border-b-[#bc4123]">
+            chrisMalm
+          </h1>
 
           {/* Desktop: visa bara navlinks, ingen profile/drawer */}
           <div className="hidden lg:flex gap-4 items-center">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/forms">Forms</NavLink>
-            <NavLink to="/Transactions">Transactions</NavLink>
-            <NavLink to="/filters">Filters</NavLink>
-            <NavLink to="/Pagination">Pagination</NavLink>
-            {me && <NavLink to="/Protected">Protected</NavLink>}
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "nav-link-active" : "nav-link"
+              }
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/forms"
+              className={({ isActive }) =>
+                isActive ? "nav-link-active" : "nav-link"
+              }
+            >
+              Forms
+            </NavLink>
+            <NavLink
+              to="/Transactions"
+              className={({ isActive }) =>
+                isActive ? "nav-link-active" : "nav-link"
+              }
+            >
+              Transactions
+            </NavLink>
+            <NavLink
+              to="/filters"
+              className={({ isActive }) =>
+                isActive ? "nav-link-active" : "nav-link"
+              }
+            >
+              Filters
+            </NavLink>
+            <NavLink
+              to="/Pagination"
+              className={({ isActive }) =>
+                isActive ? "nav-link-active" : "nav-link"
+              }
+            >
+              Pagination
+            </NavLink>
             {me && (
-              <NavLink to="/Profile" className="flex items-center gap-1">
+              <NavLink
+                to="/Protected"
+                className={({ isActive }) =>
+                  isActive ? "nav-link-active" : "nav-link"
+                }
+              >
+                Protected
+              </NavLink>
+            )}
+            {me && (
+              <NavLink
+                to="/Profile"
+                className={({ isActive }) =>
+                  `${
+                    isActive ? "nav-link-active" : "nav-link"
+                  } flex items-center gap-1`
+                }
+              >
                 <AccountBoxIcon /> Profile
               </NavLink>
             )}
-            {!me && <NavLink to="/Login">Login</NavLink>}
+            {!me && (
+              <NavLink
+                to="/Login"
+                className={({ isActive }) =>
+                  isActive ? "nav-link-active" : "nav-link"
+                }
+              >
+                Login
+              </NavLink>
+            )}
           </div>
 
           {/* Tablet/Small: Hamburger */}
@@ -107,19 +169,20 @@ const BaseLayout = () => {
           </div>
         </nav>
       </header>
+      <div className="flex min-h-screen flex-col">
+        <main className="py-8 flex, flex-1 items-center justify-center">
+          <Snackbar
+            open={snackbarOpen}
+            autoHideDuration={6000}
+            onClose={handleSnackbarClose}
+            message={`Welcome ${user?.name}`}
+          />
+          <Outlet />
+        </main>
 
-      <main className="py-8 flex, flex-1 items-center justify-center">
-        <Snackbar
-          open={snackbarOpen}
-          autoHideDuration={6000}
-          onClose={handleSnackbarClose}
-          message={`Welcome ${user?.name}`}
-        />
-        <Outlet />
-      </main>
-
-      <footer className="text-center p-8 mt-auto">Copyright 2025</footer>
-    </div>
+        <footer className="text-center p-8 mt-auto">Copyright 2025</footer>
+      </div>
+    </>
   );
 };
 

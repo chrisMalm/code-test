@@ -65,3 +65,4 @@ if (process.env.NODE_ENV !== "production") {
 //     res.status(500).json({ error: "Server error" });
 //   }
 // });
+module.exports = app; // ⚠️ Exportera appen, inte starta listen här

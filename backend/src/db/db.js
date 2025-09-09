@@ -8,6 +8,15 @@ const pool = new Pool({
     rejectUnauthorized: false, // krävs för Neon serverless på Vercel
   },
 });
+
+pool.connect((err, client, release) => {
+  if (err) {
+    console.error("Databasanslutning misslyckades:", err.stack);
+  } else {
+    console.log("Databas ansluten!");
+    release();
+  }
+});
 // const pool = new Pool({
 //   user: "postgres",
 //   host: "localhost",

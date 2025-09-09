@@ -107,6 +107,8 @@ exports.logout = async (req, res) => {
 
 // me
 exports.me = async (req, res) => {
+  console.log("Inne i /me route, user:", req.user);
+
   res.json({ user: req.user });
 };
 

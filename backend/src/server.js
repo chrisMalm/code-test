@@ -1,9 +1,8 @@
 const express = require("express");
-const app = express();
 const cors = require("cors");
-// const pool = require("./db/db");
 require("dotenv").config();
 const cookieParser = require("cookie-parser");
+const app = express();
 
 //middleware
 app.use(cookieParser());
@@ -21,24 +20,24 @@ app.use(
 
 // routes
 const authRoutes = require("./routes/authRoutes");
-const itemRoutes = require("./routes/itemRoutes");
-const transactionRoutes = require("./routes/transactionRoutes");
+// const itemRoutes = require("./routes/itemRoutes");
+// const transactionRoutes = require("./routes/transactionRoutes");
 
 app.use("/api", authRoutes);
-app.use("/api", itemRoutes);
-app.use("/api", transactionRoutes);
+// app.use("/api", itemRoutes);
+// app.use("/api", transactionRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
 // 🔹 Endast starta server lokalt
-if (process.env.NODE_ENV !== "production") {
-  const port = process.env.PORT || 5000;
-  app.listen(port, () => {
-    console.log(`🚀 Server running on http://localhost:${port}`);
-  });
-}
+// if (process.env.NODE_ENV !== "production") {
+//   const port = process.env.PORT || 5000;
+//   app.listen(port, () => {
+//     console.log(`🚀 Server running on http://localhost:${port}`);
+//   });
+// }
 
 // API: Post user för form navigationen controller eller register.
 // denna är bara för att visa hur forms funkar, den har inget med login att göra

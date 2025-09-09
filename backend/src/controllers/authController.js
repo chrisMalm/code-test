@@ -49,7 +49,12 @@ exports.signup = async (req, res) => {
     );
 
     res
-      .cookie("token", token, { httpOnly: true, sameSite: "lax" })
+      .cookie("token", token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // cross-site i prod
+        maxAge: 1000 * 60 * 60,
+      })
       .status(201)
       .json({ user });
   } catch (err) {

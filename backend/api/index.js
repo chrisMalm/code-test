@@ -1,2 +1,2 @@
-const app = require("../src/server"); // vägen till server.js
+const app = require("../src/server.js"); // vägen till server.js
 module.exports = app;

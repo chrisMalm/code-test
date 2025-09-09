@@ -19,6 +19,8 @@ const BaseLayout = () => {
   }, [firstInit, user]);
 
   useEffect(() => {
+    console.log("hej");
+
     dispatch(getLoggedInUser());
   }, [location.pathname, dispatch]);
 

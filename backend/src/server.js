@@ -11,7 +11,10 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:3000", // din frontend-url
+    origin: [
+      "http://localhost:3000",
+      "https://techsolutionsfrontend.vercel.app",
+    ],
     exposedHeaders: ["X-Total-Count"], // 👈 detta är nyckeln
     credentials: true, // 👈 tillåt cookies
   })
@@ -30,9 +33,13 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
-});
+// 🔹 Endast starta server lokalt
+if (process.env.NODE_ENV !== "production") {
+  const port = process.env.PORT || 5000;
+  app.listen(port, () => {
+    console.log(`🚀 Server running on http://localhost:${port}`);
+  });
+}
 
 // API: Post user för form navigationen controller eller register.
 // denna är bara för att visa hur forms funkar, den har inget med login att göra

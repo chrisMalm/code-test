@@ -38,23 +38,24 @@ app.listen(port, () => {
 // denna är bara för att visa hur forms funkar, den har inget med login att göra
 //  och sätter inga cookies eller hashar psw osv
 // använder dessutom ett eget table i PG
-app.post("/api/user", async (req, res) => {
-  try {
-    const { name, email, address } = req.body;
-    if (!name || !email || !address) {
-      return res.status(400).json({ error: "All fields required" });
-    }
-    // Vad gör RETURNING?
-    // Efter att du har gjort INSERT,
-    // returnera den nya raden som skapades – inklusive alla kolumner
-    const result = await pool.query(
-      "INSERT INTO users (name, email, address) VALUES ($1, $2, $3) RETURNING *",
-      [name, email, address]
-    );
 
-    res.status(201).json(result.rows[0]);
-  } catch (err) {
-    console.error("Error posting user:", err);
-    res.status(500).json({ error: "Server error" });
-  }
-});
+// app.post("/api/user", async (req, res) => {
+//   try {
+//     const { name, email, address } = req.body;
+//     if (!name || !email || !address) {
+//       return res.status(400).json({ error: "All fields required" });
+//     }
+//     // Vad gör RETURNING?
+//     // Efter att du har gjort INSERT,
+//     // returnera den nya raden som skapades – inklusive alla kolumner
+//     const result = await pool.query(
+//       "INSERT INTO users (name, email, address) VALUES ($1, $2, $3) RETURNING *",
+//       [name, email, address]
+//     );
+
+//     res.status(201).json(result.rows[0]);
+//   } catch (err) {
+//     console.error("Error posting user:", err);
+//     res.status(500).json({ error: "Server error" });
+//   }
+// });

@@ -9,15 +9,15 @@ import BaseLayout from "./layouts/baseLayout";
 import NotFound from "./pages/NotFound";
 import { store } from "./store/index";
 import { Provider } from "react-redux";
-import UserForm from "./components/RegisterForm";
-import FormWrapperLayout from "./layouts/formWrapperLayout";
-import ControllerForm from "./components/ControllerForm";
+// import UserForm from "./components/RegisterForm";
+// import FormWrapperLayout from "./layouts/formWrapperLayout";
+// import ControllerForm from "./components/ControllerForm";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./MuiThemes/theme"; // importera ditt theme
-import Transactions from "./pages/Transactions";
-import FilterData from "./pages/FilterData";
-import MultiFilterData from "./pages/MultiFilterData";
-import Pagination from "./pages/Pagination";
+// import Transactions from "./pages/Transactions";
+// import FilterData from "./pages/FilterData";
+// import MultiFilterData from "./pages/MultiFilterData";
+// import Pagination from "./pages/Pagination";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import ProtectedPage from "./pages/ProtectedPage";
@@ -29,19 +29,19 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<BaseLayout />}>
         <Route index element={<Home />} />
-        <Route path="/forms" element={<FormWrapperLayout />}>
+        {/* <Route path="/forms" element={<FormWrapperLayout />}>
           <Route path="register-form" element={<UserForm />} />
           <Route path="controller-form" element={<ControllerForm />} />
-        </Route>
-        <Route path="/filters" element={<FilterWrapperLayout />}>
+        </Route> */}
+        {/* <Route path="/filters" element={<FilterWrapperLayout />}>
           <Route path="transaction-filter" element={<FilterData />} />
           <Route path="multi-filter" element={<MultiFilterData />} />
-        </Route>
-        <Route path="transactions" element={<Transactions />} />
+        </Route> */}
+        {/* <Route path="transactions" element={<Transactions />} /> */}
 
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
-        <Route path="pagination" element={<Pagination />} />
+        {/* <Route path="pagination" element={<Pagination />} /> */}
         <Route path="/protected" element={<ProtectedPage />} />
         <Route path="/profile" element={<Profile />} />
 

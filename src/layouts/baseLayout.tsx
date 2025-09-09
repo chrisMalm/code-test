@@ -1,17 +1,12 @@
-import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { Box, IconButton, Drawer, Snackbar, Divider } from "@mui/material";
+import { Snackbar } from "@mui/material";
 import { useEffect, useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
-import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import { clearFirstInit } from "../store/singup/signupSlice";
 import { getLoggedInUser } from "../store/getloggedInUser/getLoggedInUserSlice";
-import { logoutUser } from "../store/logout/logoutSlice";
+import Navbar from "../components/Navbar";
 
 const BaseLayout = () => {
-  const [open, setOpen] = useState(false);
-  const toggleDrawer = (state: boolean) => () => setOpen(state);
-
   const { firstInit, user } = useAppSelector((state) => state.signup);
   const { me } = useAppSelector((state) => state.me);
   const dispatch = useAppDispatch();
@@ -32,157 +27,24 @@ const BaseLayout = () => {
     dispatch(clearFirstInit());
   };
 
-  const handleLogout = () => {
-    dispatch(logoutUser())
-      .unwrap()
-      .then(() => {
-        window.location.href = "/";
-      });
-  };
-
-  const DrawerList = (
-    <Box
-      className="bg-profileCard h-full text-white font-bold"
-      sx={{ width: 250 }}
-      role="presentation"
-      onClick={toggleDrawer(false)}
-    >
-      <Box sx={{ padding: "1rem" }}>{me?.name}</Box>
-      <Divider />
-      <Box className="flex flex-col gap-4 p-4">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/forms">Forms</NavLink>
-        <NavLink to="/Transactions">Transactions</NavLink>
-        <NavLink to="/filters">Filters</NavLink>
-        <NavLink to="/Pagination">Pagination</NavLink>
-        {me && <NavLink to="/Protected">Protected</NavLink>}
-        {me && (
-          <NavLink to="/Profile" className="flex items-center gap-1">
-            <AccountBoxIcon /> Profile
-          </NavLink>
-        )}
-        {!me && <NavLink to="/Login">Login</NavLink>}
-        {me && (
-          <button
-            className="font-bold text-white rounded-sm shadow hover:bg-red-600 transition"
-            onClick={() => handleLogout()}
-          >
-            Logout
-          </button>
-        )}
-      </Box>
-    </Box>
-  );
-
   return (
-    <>
-      <header className="bg-headerNav p-5">
-        <nav className="flex ">
-          <h1 className="p-2 text-xl font-bold mr-auto border-b-2 border-b-[#bc4123]">
-            chrisMalm
-          </h1>
-
-          {/* Desktop: visa bara navlinks, ingen profile/drawer */}
-          <div className="hidden lg:flex gap-4 items-center">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? "nav-link-active" : "nav-link"
-              }
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/forms"
-              className={({ isActive }) =>
-                isActive ? "nav-link-active" : "nav-link"
-              }
-            >
-              Forms
-            </NavLink>
-            <NavLink
-              to="/Transactions"
-              className={({ isActive }) =>
-                isActive ? "nav-link-active" : "nav-link"
-              }
-            >
-              Transactions
-            </NavLink>
-            <NavLink
-              to="/filters"
-              className={({ isActive }) =>
-                isActive ? "nav-link-active" : "nav-link"
-              }
-            >
-              Filters
-            </NavLink>
-            <NavLink
-              to="/Pagination"
-              className={({ isActive }) =>
-                isActive ? "nav-link-active" : "nav-link"
-              }
-            >
-              Pagination
-            </NavLink>
-            {me && (
-              <NavLink
-                to="/Protected"
-                className={({ isActive }) =>
-                  isActive ? "nav-link-active" : "nav-link"
-                }
-              >
-                Protected
-              </NavLink>
-            )}
-            {me && (
-              <NavLink
-                to="/Profile"
-                className={({ isActive }) =>
-                  `${
-                    isActive ? "nav-link-active" : "nav-link"
-                  } flex items-center gap-1`
-                }
-              >
-                <AccountBoxIcon /> Profile
-              </NavLink>
-            )}
-            {!me && (
-              <NavLink
-                to="/Login"
-                className={({ isActive }) =>
-                  isActive ? "nav-link-active" : "nav-link"
-                }
-              >
-                Login
-              </NavLink>
-            )}
-          </div>
-
-          {/* Tablet/Small: Hamburger */}
-          <div className="lg:hidden">
-            <IconButton sx={{ color: "white" }} onClick={toggleDrawer(true)}>
-              <MenuIcon />
-            </IconButton>
-            <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
-              {DrawerList}
-            </Drawer>
-          </div>
-        </nav>
+    <div className="flex flex-col min-h-screen">
+      <header className="bg-headerNav/80 backdrop-blur-md sticky top-0 p-5 z-50">
+        <Navbar me={me} />
       </header>
-      <div className="flex min-h-screen flex-col">
-        <main className="py-8 flex, flex-1 items-center justify-center">
-          <Snackbar
-            open={snackbarOpen}
-            autoHideDuration={6000}
-            onClose={handleSnackbarClose}
-            message={`Welcome ${user?.name}`}
-          />
-          <Outlet />
-        </main>
 
-        <footer className="text-center p-8 mt-auto">Copyright 2025</footer>
-      </div>
-    </>
+      <main className="flex-1 mx-auto w-full max-w-[1200px] p-8 xl:px-0 py-8">
+        <Snackbar
+          open={snackbarOpen}
+          autoHideDuration={6000}
+          onClose={handleSnackbarClose}
+          message={`Welcome ${user?.name}`}
+        />
+        <Outlet />
+      </main>
+
+      <footer className="text-center p-8 mt-auto">Copyright 2025</footer>
+    </div>
   );
 };
 

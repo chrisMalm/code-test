@@ -1,6 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
 import usersReducer from "./users/usersSlice";
-import counterReducer from "./counter/counterSlice";
 import transactionReducer from "./transactions/transactionsSlice";
 import itemsReducer from "./items/itemsSlice";
 import signUpReducer from "./singup/signupSlice";
@@ -12,7 +11,6 @@ import logoutReducer from "./logout/logoutSlice";
 export const store = configureStore({
   reducer: {
     users: usersReducer,
-    counter: counterReducer,
     transactions: transactionReducer,
     items: itemsReducer,
     signup: signUpReducer,

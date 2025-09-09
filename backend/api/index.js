@@ -1,2 +1,3 @@
+const serverless = require("serverless-http");
 const app = require("../src/server.js"); // vägen till server.js
-module.exports = app;
+module.exports = serverless(app);

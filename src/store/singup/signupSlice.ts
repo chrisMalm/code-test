@@ -56,14 +56,17 @@ export const signUpUser = createAsyncThunk<
   { rejectValue: string }
 >("user/signup", async (data, thunkAPI) => {
   try {
-    const res = await fetch("http://localhost:5000/api/signup", {
-      method: "POST",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    const res = await fetch(
+      `${process.env.REACT_APP_API_BASE_URL}/api/signup`,
+      {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
     if (!res.ok) {
       //   res.ok är false om res.status >= 400, denna skickas till addcase rejected
       //   payloaden blir errortext  eller "serverfel: " + res.status

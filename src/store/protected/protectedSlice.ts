@@ -48,10 +48,13 @@ export const fetchProtectedData = createAsyncThunk<
   { rejectValue: string }
 >("protected", async (_, thunkAPI) => {
   try {
-    const res = await fetch("http://localhost:5000/api/protected", {
-      method: "GET",
-      credentials: "include",
-    });
+    const res = await fetch(
+      `${process.env.REACT_APP_API_BASE_URL}/api/protected`,
+      {
+        method: "GET",
+        credentials: "include",
+      }
+    );
     if (!res.ok) {
       const errorData = await res.json();
       return thunkAPI.rejectWithValue(errorData);

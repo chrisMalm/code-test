@@ -49,10 +49,13 @@ export const logoutUser = createAsyncThunk<
   { rejectValue: string }
 >("logout", async (_, thunkAPI) => {
   try {
-    const res = await fetch("http://localhost:5000/api/logout", {
-      method: "POST",
-      credentials: "include",
-    });
+    const res = await fetch(
+      `${process.env.REACT_APP_API_BASE_URL}/api/logout`,
+      {
+        method: "POST",
+        credentials: "include",
+      }
+    );
 
     if (!res.ok) {
       console.log("i !res.ok");

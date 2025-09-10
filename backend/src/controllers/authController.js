@@ -107,7 +107,16 @@ exports.login = async (req, res) => {
 // logout
 exports.logout = async (req, res) => {
   console.log("i apiet be");
-  res.clearCookie("token").status(200).json({ message: "Logged out" });
+  const cookieOptions = {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+  };
+
+  res
+    .clearCookie("token", cookieOptions)
+    .status(200)
+    .json({ message: "Logged out" });
 };
 
 // me

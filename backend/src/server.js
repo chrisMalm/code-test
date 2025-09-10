@@ -13,7 +13,7 @@ app.use(
       "http://localhost:3000",
       "https://techsolutionsfrontend.vercel.app",
     ],
-    exposedHeaders: ["X-Total-Count"], // 👈 detta är nyckeln
+    exposedHeaders: ["X-Total-Count"], // 👈 detta är nyckeln för pagination
     credentials: true, // 👈 tillåt cookies
   })
 );

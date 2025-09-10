@@ -54,6 +54,8 @@ const Login = () => {
     dispatch(login(data))
       .unwrap()
       .then((res) => {
+        console.log(res, "res");
+
         reset();
         navigate("/");
       })
